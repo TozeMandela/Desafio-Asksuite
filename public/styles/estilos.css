@@ -26,27 +26,26 @@ header a{
 header a span{
     margin-left: 15px;
 }
-.containerModify{
-    max-width: 900px;
-    margin: auto;
-}
 .esquerda{
-    margin-top: 10px;
-    max-width: 670px;
-    float: left;
+    height: 40px;
+    line-height: 40px;
+    background-color: var(--p0);
+    min-width: 100%;
+    text-align: center;
     padding: 0 1px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow: hidden;
     box-shadow: 1px 1px 5px rgb(51, 50, 50);
 }
+
 .both{
     clear: both;
 }
 .carrinho{
-    max-width: 210px;
+    min-width: 100%;
     overflow: hidden;
-    padding: 10px;
+    padding: 3px;
     float: right;
 }
 .menu {
@@ -57,43 +56,49 @@ header a span{
     border-top-right-radius: 10px;
     text-align: center;
 }
-.spanM{
-    display: none;
+.conteudo{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 1px 8px rgb(194, 194, 194);
 }
-.conteudo article {
-    
-    border-right: 1px solid rgb(69, 67, 67);
-    border-bottom: 1px solid rgb(69, 67, 67);
+.desc{
+    height: 450px;
+    padding: 0;
 }
-.conteudo article .partOne, .conteudo article .partTwo{
-    height: 250px;
+.dataleft div div{
+    border-left:1px solid rgb(194, 194, 194);
+}
+.inicdata{
+    height: 225px;
     overflow: hidden;
+    border-top: 1px solid rgb(194, 194, 194);
 }
-.conteudo article .partOne select, .conteudo article .partTwo select{
-font-size: 10px;
-padding: 3px;
-text-transform: uppercase;
+div .inicdata div {
+    position: relative;
 }
-.conteudo article hr{
-    width: 108%;
+div .inicdata div div::before{
+    content: '';
+    background: linear-gradient(transparent, rgb(255, 255, 255));
+    position: absolute;
+    bottom: 45px;
+    height: 65%;
+    width: 100%;
 }
-.carrinho .title{
-    background-color: var(--p0);
-    border-radius: 10px 10px 0px 0px;
-    padding: 8px;
-    text-align: center;
+.fimdata{
+    height: 225px;
+    border-top: 1px solid rgb(194, 194, 194);
 }
 .carrinho .addCar{
     box-shadow: 1px 1px 5px black;
     padding: 10px;
 }
 .carrinho .addCar h5{
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     font-weight: bolder;
 }
 .carrinho .addCar p{
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
 }
 .carrinho button{
@@ -102,22 +107,19 @@ text-transform: uppercase;
     margin-top: 20px;
     box-shadow: 1px 1px 5px black;
 }
-div article figure{
-    width: 106%;
-    display: inline-block;
+div div figure{
+    display: block;
+    height: 30px;
 }
-div article figure p{
-    display: inline;
-    padding: 4px;
-    background-color: #f90e39;
-    line-height: 30px;
-    max-width: 50%;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-    margin-left: 15px;
+div div figure img{
+    display: block;
+    width: 100%;
+    height: 180px;
 }
-div article figure figcaption{
+.qtdE{
+    margin-left: 10%;
+}
+.figC{
     display: flex;
     justify-content: space-around;
 }
@@ -130,13 +132,10 @@ div article figure figcaption{
     content: '';
     background: linear-gradient(transparent, rgb(255, 255, 255));
     position: absolute;
-    bottom: 10px;
-    height: 20%;
+    bottom: 5px;
+    height: 50%;
     width: 100%;
     
-}
-.lermais{
-
 }
 /* // Small devices (landscape phones, 576px and up) */
 @media (max-width: 576px) {  }
