@@ -84,6 +84,16 @@ div .inicdata div div::before{
     height: 65%;
     width: 100%;
 }
+.promocao{
+    margin-top: 15px;
+    text-align: end;
+}
+.percentagem{
+    background: orangered;
+    color: white;
+    padding: 4px;
+    border-radius: 10px;
+}
 .fimdata{
     height: 225px;
     border-top: 1px solid rgb(194, 194, 194);
