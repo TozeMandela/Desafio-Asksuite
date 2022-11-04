@@ -76,7 +76,7 @@ header a span{
 div .inicdata div {
     position: relative;
 }
-div .inicdata div div::before{
+div .inicdata div.cond div::before{
     content: '';
     background: linear-gradient(transparent, rgb(255, 255, 255));
     position: absolute;
@@ -84,15 +84,29 @@ div .inicdata div div::before{
     height: 65%;
     width: 100%;
 }
-.promocao{
+div select,.promocao{
     margin-top: 15px;
     text-align: end;
+}
+div select{
+    position: relative;
+    right: 0px;
+}
+
+.promocao div{
+    color: orangered;
+}
+.promocao div h3 p{
+    color: black;
 }
 .percentagem{
     background: orangered;
     color: white;
     padding: 4px;
     border-radius: 10px;
+}
+small, .porN{
+    font-size: 16px;
 }
 .fimdata{
     height: 225px;
