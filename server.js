@@ -17,8 +17,11 @@ mongoose.connect(process.env.CONNECTBD).then(()=>{
 });
 
 const session = require('express-session');
+const flash = require('connect-flash');
+const helmet = require('helmet');
+const csrf = require('csurf');
 
-
+app.use(helmet());
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({extended: false}))
 app.use(express.static(path.join(__dirname,'public')));
@@ -32,7 +35,10 @@ app.use(session({
         maxAge: 1000 * 60 * 60 * 24 * 1,
         httpOnly: true 
     }
-}))
+}));
+
+app.use(flash());
+app.use(csrf());
 
 
 app.use('/', Router)
