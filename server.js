@@ -1,14 +1,10 @@
 require('dotenv').config();
-
 let path = require('path');
-
 let express = require('express');
 let app = express();
 const Router = require('./router');
 
-const MongoStore = require('connect-mongo');
 const mongoose = require('mongoose');
-
 mongoose.connect(process.env.CONNECTBD).then(()=>{
     app.emit('is connected');
     console.log('BD connect com sucesso...');
@@ -16,10 +12,13 @@ mongoose.connect(process.env.CONNECTBD).then(()=>{
     console.log('Erro in connect to BD', e);
 });
 
+const MongoStore = require('connect-mongo');
 const session = require('express-session');
 const flash = require('connect-flash');
 const helmet = require('helmet');
 const csrf = require('csurf');
+
+const {CSRF} = require('./MIDDLEWARE/csrfMiddle')
 
 app.use(helmet());
 app.set('view engine', 'ejs');
@@ -40,7 +39,7 @@ app.use(session({
 app.use(flash());
 app.use(csrf());
 
-
+app.use(CSRF)
 app.use('/', Router)
 
 app.on('is connected', ()=>{

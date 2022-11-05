@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+    <%- include("../util/head"); %>
+<body>
+    <%- include("../util/header"); %>
+
+    <main class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form action="/add" method="POST" class="m-4">
+                    <label for="name">Titulo</label>
+                    <input type="text" name="name" id="name" class="name form-control" placeholder="digite o nome da sala">
+                    <label for="descrition">Descrição</label>
+                    <textarea name="descrition" id="descrition" class="descrition form-control" placeholder="digite a descrição do quarto"></textarea>
+                    <label for="valor_noite">Valor Por Noite</label>
+                    <input type="number" name="valor_noite" id="valor_noite" class="valor_noite form-control" placeholder="digite o valor por noite">
+                    <label for="foto">Insira a foto do quarto</label>
+                    <input type="file" name="foto" id="foto" class="foto form-control" placeholder="insira a foto do quarto">
+                    <button type="submit" class="btn btn-success mt-2">registrar</button>
+                </form>
+            </div>
+            <div class="col-3"></div>
+        </div>
+    </main>
+    
+    <%- include("../util/footer") %>
+</body>
+</html>
