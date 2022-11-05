@@ -1,1 +1,1 @@
-{"version":3,"file":"bundle.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAR,CAAY,aAAZ,E","sources":["webpack://desafio-asksuite/./src/index.js"],"sourcesContent":["console.log('aaaaaaaaaaa')"],"names":["console","log"],"sourceRoot":""}
+{"version":3,"file":"bundle.js","mappings":";;;;;AAAAA,OAAO,CAACC,GAAR,CAAY,aAAZ,E","sources":["webpack://desafio-asksuite/./frontEnd/index.js"],"sourcesContent":["console.log('aaaaaaaaaaa')"],"names":["console","log"],"sourceRoot":""}
