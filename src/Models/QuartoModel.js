@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const QuartosSchema = new mongoose.Schema({
+const QuartoSchema = new mongoose.Schema({
     name: {
         type: String
         ,require: true
@@ -19,7 +19,7 @@ const QuartosSchema = new mongoose.Schema({
     }, // Foto principal da sala
 });
 
-mongoose.model(QuartosSchema, 'Quartos');
+const QuartoData = mongoose.model('Quartos',QuartoSchema);
 
 class Quarto {
     constructor(body){
@@ -27,5 +27,24 @@ class Quarto {
         this.Erros = new Array(); 
     }
 
-    
+    register(){
+        this.validator();
+    }
+    validator(){
+        this.cleanData()
+    }
+    cleanData(){
+        for(const key in this.body){
+            if(!this.body[key]) this.body[key]==''; 
+        }
+
+        this.body = {
+            name: this.body.name,
+            description: this.body.descrition,
+            price: this.body.valor_noite,
+            image:  this.body.foto
+        }
+    }
 }
+
+module.exports = Quarto;

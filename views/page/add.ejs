@@ -8,7 +8,8 @@
         <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-                <form action="/add" method="POST" class="m-4">
+                <form class="m-4">
+                    <input type="hidden" name="_csrf" value="<%= csrf %>">
                     <label for="name">Titulo</label>
                     <input type="text" name="name" id="name" class="name form-control" placeholder="digite o nome da sala">
                     <label for="descrition">Descrição</label>
