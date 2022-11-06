@@ -1,11 +1,31 @@
 const XhttpRequest = require('./xhttprequest');
-const form = document.querySelector('form');
+const inputfile = document.querySelector('input[type=file]');
 
-form.addEventListener('submit', e=>{
+
+
+inputfile.addEventListener('change', e=>{
     // e.preventDefault();
-    getData(e.target)
+    ConvertToBase64(e.target);
+    console.log(inputfile.value);
+    // ()
 
 });
+
+function ConvertToBase64(foto){
+    const photo = foto.files;
+
+    if(photo.length > 0){
+        const file = new FileReader();
+
+        file.onload = async function(e){
+            document.getElementById('photo').value = await e.target.result;
+        }
+
+      file.readAsDataURL(photo[0]);
+
+    }
+}
+/* 
 
 function getData(formI){
     const inputs = formI.querySelectorAll('input,textarea');
@@ -17,20 +37,7 @@ function getData(formI){
     });
 }
 
-function ConvertToBase64(foto, inputs){
-    const photo = foto.files;
 
-    if(photo.length > 0){
-        const file = new FileReader();
-
-        file.onload = async function(e){
-          teste(e.target.result, inputs)
-        }
-
-      file.readAsDataURL(photo[0]);
-
-    }
-}
 function teste(a, inputs){
     let user = {};
     inputs.forEach(fields => {
@@ -41,4 +48,4 @@ function teste(a, inputs){
         }
     });
 XhttpRequest.Post('/add',user)
-}
+} */
